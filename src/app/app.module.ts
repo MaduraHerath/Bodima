@@ -6,13 +6,13 @@ import { HomeComponent } from './home/home.component';
 
 
 import { RouterModule, Routes } from '@angular/router';
-import {AuthService } from './auth.service';
+
 
 import { FormsModule }    from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
-var mysql = require('mysql');
+
 
 /*Routes*/
 export const appRoute: Routes = [
@@ -32,7 +32,7 @@ export const appRoute: Routes = [
     BrowserModule,
    
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 
