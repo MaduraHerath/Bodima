@@ -1,0 +1,17 @@
+.female{
+    color: #F62459 !important;
+    font-size:30px;
+}
+.male{
+    color:#446CB3 !important;
+    font-size:30px;
+}
+
+.range-slider{
+ min-width: 120px;
+ width: 220px;  
+}
+
+.header{
+    background-color: white;
+}
