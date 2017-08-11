@@ -23,15 +23,15 @@
                  
                         <li class="nav-item"><a class="scrollto" href="#about">About</a></li>
 
-                        <li class="nav-item"><a class="scrollto" href="#license"  *ngIf="auth.isAuthenticated()">Notifications<span class="badge badge-notify notify">2</span></a></li>                 
-                        <li class="nav-item last"><a class="scrollto" href="#contact"  *ngIf="auth.isAuthenticated()">List<span class="badge badge-notify notify">10</span></a></li>
+                        <!--<li class="nav-item"><a class="scrollto" href="#license"  *ngIf="auth.isAuthenticated()">Notifications<span class="badge badge-notify notify">2</span></a></li>                 
+                        <li class="nav-item last"><a class="scrollto" href="#contact"  *ngIf="auth.isAuthenticated()">List<span class="badge badge-notify notify">10</span></a></li>-->
 
                     </ul><!--//nav-->
                     <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item last">
                     <div class="ui buttons btn-nav">
-                    <button class="ui button"  *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Login</button>
-                    <button class="ui button btn-primary" *ngIf="auth.isAuthenticated()"  (click)="auth.logout()">Log Out</button>
+                    <!--<button class="ui button"  *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Login</button>
+                    <button class="ui button btn-primary" *ngIf="auth.isAuthenticated()"  (click)="auth.logout()">Log Out</button>-->
                     <div class="or"></div>
                     <button class="ui positive button">Sign Up</button>
                     </div>
