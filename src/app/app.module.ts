@@ -25,12 +25,11 @@ export const appRoute: Routes = [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
      RouterModule.forRoot(appRoute),
     BrowserModule,
-   
   ],
   providers: [],
   bootstrap: [AppComponent]
