@@ -86,7 +86,8 @@
                 <input type="text" class="form-control" id="pwd">
               </div>
               </div>
-              <a  class="btn btn-default text-center col-xs-12 col-md-6 box" style="background-color:#50d8af;color:white"  href="/bodima/bodims">Search</a>
+              <a  class="btn btn-default text-center col-xs-12 col-md-6 box" style="background-color:#50d8af;color:white" href=" bodims" >Search</a>
+
             </form>
             <!--<ul>
               <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>

@@ -30,10 +30,16 @@ public class RestClient {
     @Value("${addbookurl}")
     private String addbookurl;
 
-    public List<Bodim> getBookDetails() {
+    public List<Bodim> getBodaimaDetails(String location) {
 
+        Map<String ,String> params = new HashMap<String, String>();
+        params.put("location",String.valueOf(location));
+
+        System.out.println(params);
         restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-        ResponseEntity<Bodim[]> responseEntity = restTemplate.getForEntity(getbooksurl, Bodim[].class);
+        ResponseEntity<Bodim[]> responseEntity = restTemplate.getForEntity(getbooksurl, Bodim[].class,params);
+        System.out.println("This is the fucking response");
+        System.out.println( Arrays.asList(responseEntity.getBody()));
         return Arrays.asList(responseEntity.getBody());
 
     }

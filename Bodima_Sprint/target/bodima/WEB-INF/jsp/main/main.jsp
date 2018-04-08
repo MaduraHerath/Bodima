@@ -11,7 +11,7 @@
           <h4 class="white wow fadeIn" style="color:#FAFAFA">Search</h4>
           </div>
           <div class="col-md-6 col-sm-12" style="padding-right: 0px;padding-left: 0px;" >
-          <a href="#portfolio" class="btn-projects scrollto" id="add"style="margin-bottom: 18px !important"><i class="material-icons wow rubberBand"  style="font-size: 60px;">add</i></a>
+          <a href="#addbodima" class="btn-projects scrollto" id="add"style="margin-bottom: 18px !important"><i class="material-icons wow rubberBand"  style="font-size: 60px;">add</i></a>
            <h4 class="white wow fadeIn" style="color:#FAFAFA">Add</h4>
           </div>
       </div>

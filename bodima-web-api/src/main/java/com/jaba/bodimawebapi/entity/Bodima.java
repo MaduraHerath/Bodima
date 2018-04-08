@@ -2,6 +2,9 @@ package com.jaba.bodimawebapi.entity;
 
 
 
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 import java.io.Serializable;
 
+@Indexed
 @Entity
 @Table(name = "bodim")
 
@@ -17,23 +21,23 @@ public class Bodima implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Long id;
-    @Column(name = "owner")
+    @Field
     private String owner;
-    @Column(name = "location")
+//    @Column(name = "location")
+    @Field
     private String location;
-    @Column(name = "address")
+    @Field
     private String address;
-    @Column(name = "price")
+    @Field
     private long price;
-    @Column(name = "imageLocation")
+    @Field
     private String imageLocation;
-    @Column(name ="gender")
+    @Field
     private String gender;
-    @Column(name = "status")
+    @Field
     private String status;
-    @Column(name = "roomCount")
+    @Field
     private long   roomCount;
 
 

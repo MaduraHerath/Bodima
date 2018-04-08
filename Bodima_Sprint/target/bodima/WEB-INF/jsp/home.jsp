@@ -8,6 +8,7 @@
 <jsp:include page="main/main.jsp"/>
   <main id="main">
   <jsp:include page="search/search.jsp"/>
+    <jsp:include page="addbodima.jsp"/>
   </main>
 <jsp:include page="footer.jsp"/>
 </body>

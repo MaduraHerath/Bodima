@@ -3,8 +3,10 @@ package com.jaba.bodimawebapi.controller;
 
 import com.jaba.bodimawebapi.entity.Bodima;
 import com.jaba.bodimawebapi.repository.BodimaRepository;
+import com.jaba.bodimawebapi.service.HibernateSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -16,12 +18,27 @@ import java.util.List;
 public class BodimController {
 
     @Autowired
+    private HibernateSearchService searchservice;
+
+    @Autowired
     BodimaRepository bodimaRepository;
 
     @GetMapping("/bodim")
-    public List<Bodima> getAllNotes() {
-        return bodimaRepository.findAll();
+    public List<Bodima> search(@RequestParam(value = "search",required = false)String q, Model model){
+        List<Bodima> bodimaResults = null;
+
+        try {
+            bodimaResults = searchservice.fuzzySearch(q);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        model.addAttribute("search",bodimaResults);
+        return bodimaResults;
     }
+//    public List<Bodima> getAllNotes() {
+//        return bodimaRepository.findAll();
+//    }
 
     @GetMapping("/bodim/{id}")
     public ResponseEntity<Bodima> getNoteById(@PathVariable(value = "id") Long bodimId) {

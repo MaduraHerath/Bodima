@@ -1,11 +1,4 @@
-* {
-overflow: hidden;  //Change this to scroll or auto
-margin: 0;
-padding: 0;
-}
-html {
-position: fixed;  //Change this to static or something else
-}
+
 /*
   Theme Name: Reveal
   Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
@@ -75,7 +68,7 @@ white{
 }
 
 .back-to-top:hover {
-  background: #0c2e8a;
+  background: #50d8af;
   color: #fff;
 }
 
@@ -147,7 +140,7 @@ white{
 }
 
 #header #logo h1 a {
-  color: #0c2e8a;
+  color: #50d8af;
   line-height: 1;
   display: inline-block;
 }
@@ -207,7 +200,7 @@ white{
 }
 
 #intro .intro-content h2 {
-  color: #0c2e8a;
+  color: #50d8af;
   margin-bottom: 30px;
   font-size: 64px;
   font-weight: 700;
@@ -530,7 +523,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .section-header h2 {
   font-size: 32px;
-  color: #0c2e8a;
+  color: #50d8af;
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
@@ -591,7 +584,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .content h2 {
-  color: #0c2e8a;
+  color: #50d8af;
   font-weight: 700;
   font-size: 36px;
   font-family: "Raleway", sans-serif;
@@ -638,8 +631,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 40px;
   margin-bottom: 40px;
   box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
-  background: #fff;
   transition: 0.4s;
+  background: linear-gradient(-45deg, #FAFAFA, #F5F5F5);
 }
 
 #services .box:hover {
@@ -662,7 +655,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box .icon i:before {
-  background: #0c2e8a;
+  background: #50d8af;
   background: linear-gradient(45deg, #50d8af 0%, #a3ebd5 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
@@ -1115,7 +1108,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .credits a {
-  color: #0c2e8a;
+  color: #50d8af;
 }
 .videoContainer {
     position: relative;
@@ -1146,4 +1139,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   position:absolute;
   z-index: 3;
 
+}
+
+.title{
+color:#009688 !important;
+font-weight: bold;
+}
+
+.description{
+color:#607D8B !important;
 }

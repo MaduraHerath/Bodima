@@ -19,9 +19,10 @@
     left: 0;
     top: 0; }
   .jsmaps-wrapper .jsmaps-text {
-    float: left;
+    float: center;
     overflow: auto;
     padding: 10px 20px;
+    font-size:0!important;
     clear: both; }
   .jsmaps-wrapper .jsmaps-tooltip {
     position: fixed;

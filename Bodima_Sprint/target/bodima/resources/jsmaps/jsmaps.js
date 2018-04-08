@@ -90,10 +90,10 @@
     /////////////////////////////
     var settings = $.extend({
       'responsive': true,
-      'offColor': '#ccc',
-      'strokeColor': '#24221f',
+      'offColor': '#4DD0E1',
+      'strokeColor': 'white',
       'offStrokeColor': '#444',
-      'strokeWidth': 1,
+      'strokeWidth': 5.5,
       'abbreviationColor': '#f2f2f2',
       'abbreviationFontSize': 12,
       'displayAbbreviations': true,
@@ -102,9 +102,9 @@
       'stateClickAction': 'text',
       'textPosition': 'right',
       'hrefTarget': '_blank',
-      'textAreaWidth': 300,
-      'textAreaHeight': 300,
-      'pinSize': 10,
+      'textAreaWidth': 0,
+      'textAreaHeight': 0,
+      'pinSize': 0,
       'displayMousePosition': false,
       'displayViewBox': false,
       'enablePanZoom': false,
@@ -113,11 +113,11 @@
       'initialMapX': 0,
       'initialMapY': 0,
       'retainPanZoomOnRedraw': false,
-      'displayPreloader': true,
+      'displayPreloader': false,
       'preloaderText': 'Loading map...',
       'disableTooltip': false,
       'selectElement': true,
-      'selectElementDevices': ['mobile'],
+      'selectElementDevices': [''],
       'selectElementDefaultText': 'Please select',
       onReady: function() {},
       onStateClick: function() {},
@@ -250,7 +250,7 @@
       //Set initial default text
       if (config.stateClickAction === 'text') {
         // Create text div
-        textArea = $('<div class="jsmaps-text"></div>').appendTo(mapWrapper);
+        textArea = $('<div class="jsmaps-text" style="width:0px!important;height:0px!important"></div>').appendTo(mapWrapper);
         textArea.html(config.defaultText);
         // Handle text left
         if (config.textPosition === 'left') {
