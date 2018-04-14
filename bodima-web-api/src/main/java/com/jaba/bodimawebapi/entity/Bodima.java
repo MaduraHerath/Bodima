@@ -36,17 +36,17 @@ public class Bodima implements Serializable {
     @Field
     private String gender;
     @Field
-    private String status;
+    private boolean status;
     @Field
     private long   roomCount;
 
 
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

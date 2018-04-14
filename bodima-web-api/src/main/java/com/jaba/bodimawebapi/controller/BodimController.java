@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -23,12 +25,15 @@ public class BodimController {
     @Autowired
     BodimaRepository bodimaRepository;
 
+    private List<Bodima> filteredBodims = new ArrayList<Bodima>();
+
     @GetMapping("/bodim")
     public List<Bodima> search(@RequestParam(value = "search",required = false)String q, Model model){
         List<Bodima> bodimaResults = null;
 
         try {
             bodimaResults = searchservice.fuzzySearch(q);
+            filteredBodims= bodimaResults;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,6 +52,13 @@ public class BodimController {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok().body(bodima);
+    }
+
+    @PostMapping(value = "filteredBodima")
+    public List<Bodima> getFiltered(@RequestBody Bodima bodima){
+        return filteredBodims.stream().filter(e -> e.getStatus() == true && (e.getPrice() <= bodima.getPrice() && e.getRoomCount() >= bodima.getRoomCount() || e.getGender() == bodima.getGender()))
+                .collect(Collectors.toList());
+
     }
 
     @PostMapping("/bodim")
