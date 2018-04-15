@@ -19,6 +19,9 @@
   <!-- Bootstrap CSS File -->
   <link href="<c:url value="/resources/lib/bootstrap/css/bootstrap.min.css" />"rel="stylesheet">
 
+  <!-- OverHang CSS File -->
+  <link href="<c:url value="/resources/overhang/overhang.min.css" />"rel="stylesheet">
+
   <!-- Libraries CSS Files -->
   <link href="<c:url value="/resources/lib/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet">
   <link href="<c:url value="/resources/lib/animate/animate.min.css" />" rel="stylesheet">

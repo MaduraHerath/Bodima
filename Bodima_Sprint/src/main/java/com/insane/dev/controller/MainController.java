@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 
 
 import com.insane.dev.model.Bodim;
-import org.springframework.web.servlet.ModelAndView;
+
 
 @EnableAsync
 @Controller
@@ -38,20 +38,23 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/bodims" , method = RequestMethod.GET)
-    private String getAllBodims(ModelMap model) {
 
-        try {
-            model.addAttribute("bodimList", details);
-            System.out.println(details.get(0));
-            System.out.println("This is fucking ");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "searchresults";
+
+
+    @RequestMapping(value = "/searchresults" ,method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public   void getFiltered( @RequestBody Bodim bodima){
+        details = restClient.getFilteredList(bodima);
 
 
     }
+
+    @RequestMapping(value = "/searchresults" ,method = RequestMethod.GET)
+    private  String showFiltered(ModelMap model ){
+        model.addAttribute("bodimList", details);
+        return "searchresults";
+    }
+
 
 
     @RequestMapping(value = "/bodimList")

@@ -2,6 +2,9 @@ package com.insane.dev.client;
 
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -29,6 +32,18 @@ public class RestClient {
 
     @Value("${addbookurl}")
     private String addbookurl;
+
+    @Value("${getfiltered}")
+    private  String filterBodim;
+
+
+    public  List<Bodim> getFilteredList(Bodim bodim){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<Object> entity = new HttpEntity<Object>(bodim, headers);
+        List<Bodim> answer = Arrays.asList(restTemplate.postForObject(filterBodim, entity, Bodim[].class));
+              return answer;
+    }
 
     public List<Bodim> getBodaimaDetails(String location) {
 

@@ -44,6 +44,7 @@ Footer
 
 <!-- Template Main Javascript File -->
 <script src="<c:url value="/resources/js/main.js" />"></script>
+<script src="<c:url value="/resources/js/index.js" />"></script>
 
 <!-- Map scripts - add the below to your page -->
 <!-- jsmaps-panzoom.js is optional if you are using enablePanZoom -->
@@ -54,6 +55,8 @@ Footer
 <script src="<c:url value="/resources/maps/sriLanka.js"/>" type="text/javascript"></script>
 <!-- End Map scripts -->
 
+<!-- OverHang JS File -->
+<script src="<c:url value="/resources/overhang/overhang.min.js"/>" type="text/javascript"></script>
 
 <script type="text/javascript">
 
@@ -67,7 +70,7 @@ Footer
                     type: 'GET',
                     async:false,
                     data: jQuery.param({search:data.name}),
-                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    contentType: "application/json",
                     success: function (response) {
 
                     },
@@ -80,21 +83,5 @@ Footer
         });
 
     });
-    function getDistrict() {
 
-        return "Kandy"
-        // $.ajax({
-        //     url: '/bodima/bodims',
-        //     type: 'GET',
-        //     async:false,
-        //     data: jQuery.param({search:"Kandy"}),
-        //     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        //     success: function (response) {
-        //         window.location.replace("bodims");
-        //     },
-        //     error: function () {
-        //         alert("error");
-        //     }
-        // });
-    }
 </script>

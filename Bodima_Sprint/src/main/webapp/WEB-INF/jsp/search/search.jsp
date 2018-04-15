@@ -19,15 +19,15 @@
                <div class="form-row">
               <div class="form-group col-md-6">
                 <div class="form-group">
-                  <label for="sel1">Price list:</label>
-                  <select class="form-control" id="sel1">
-                    <option>3,500 Rs ></option>
-                    <option>3,500 Rs-5000 Rs</option>
-                    <option>5000 Rs-10,000 Rs</option>
-                    <option>10,000 Rs-20,000 Rs</option>
-                    <option>20,000 Rs-30,000 Rs</option>
-                    <option>30,000 Rs-50,000 Rs</option>
-                    <option>50,000 Rs<</option>
+                  <label for="pricerange">Price list:</label>
+                  <select class="form-control" id="pricerange">
+                    <option value=3500>3,500 Rs ></option>
+                    <option value=5000>less than Rs-5000 Rs</option>
+                    <option value=10000>less than Rs-10,000 Rs</option>
+                    <option value=20000>10,000 Rs-20,000 Rs</option>
+                    <option value=30000>20,000 Rs-30,000 Rs</option>
+                    <option value=435454>30,000 Rs-50,000 Rs</option>
+
                   </select>
                 </div>
               </div>
@@ -50,34 +50,34 @@
                     </div>
                     </label>
                 </div>
-              </div
+              </div>
               </div>
               </div>
               </div>
                <div class="form-row">
               <div class="form-group col-md-4">
           <div class="form-group">
-                  <label for="sel1">Rooms:</label>
-                  <select class="form-control" id="sel1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>more</option>
+                  <label for="noRooms">Rooms:</label>
+                  <select class="form-control" id="noRooms">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>more</option>
                   </select>
                 </div>
               </div>
               <div class="form-group col-md-4">
           <div class="form-group">
-                  <label for="sel1">Persons Per Rooms:</label>
-                  <select class="form-control" id="sel1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>more</option>
+                  <label for="personPerRoom">Persons Per Rooms:</label>
+                  <select class="form-control" id="personPerRoom">
+                      <option value=1>1</option>
+                      <option value=2>2</option>
+                      <option value=3>3</option>
+                      <option value=4>4</option>
+                      <option value=5>5</option>
+                      <option value=6>more</option>
                   </select>
                 </div>
               </div>
@@ -86,7 +86,7 @@
                 <input type="text" class="form-control" id="pwd">
               </div>
               </div>
-              <a  class="btn btn-default text-center col-xs-12 col-md-6 box" style="background-color:#50d8af;color:white" href=" bodims" >Search</a>
+              <a  class="btn btn-default text-center col-xs-12 col-md-6 box" style="background-color:#50d8af;color:white"  onclick="searchBodima()">Search</a>
 
             </form>
             <!--<ul>
