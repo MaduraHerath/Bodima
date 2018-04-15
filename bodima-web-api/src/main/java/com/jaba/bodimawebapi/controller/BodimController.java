@@ -56,8 +56,10 @@ public class BodimController {
 
     @PostMapping(value = "filteredBodima")
     public List<Bodima> getFiltered(@RequestBody Bodima bodima){
-        return filteredBodims.stream().filter(e -> e.getStatus() == true && (e.getPrice() <= bodima.getPrice() && e.getRoomCount() >= bodima.getRoomCount() || e.getGender() == bodima.getGender()))
+       List<Bodima> anygenderBodims =  filteredBodims.stream().filter(e -> e.getStatus() == true && (e.getPrice() <= bodima.getPrice() && e.getRoomCount() >= bodima.getRoomCount() || e.getGender() == bodima.getGender()))
                 .collect(Collectors.toList());
+
+        return anygenderBodims.stream().filter(q->q.getGender().equals(bodima.getGender().toString())) .collect(Collectors.toList());
 
     }
 
