@@ -3,7 +3,7 @@ window.JSMaps.maps.sriLanka = {
 		"mapWidth": 399.200*2,
 		"mapHeight": 700.400*2,
 		"textAreaWidth": 0,
-		"displayAbbreviations": true,
+		"displayAbbreviations": false,
 		// "defaultText": "<h1>Sri Lanka</h1><br /><p>Sri Lanka (formerly Ceylon) is an island nation south of India in the Indian Ocean. Its diverse landscapes range from rainforest and arid plains to highlands and sandy beaches. It’s famed for its ancient Buddhist ruins, including the 5th-century citadel Sigiriya, with its palace and frescoes. The city of Anuradhapura, Sri Lanka's ancient capital, has many ruins dating back more than 2,000 years.</p>"
 	},
 	"paths": [
