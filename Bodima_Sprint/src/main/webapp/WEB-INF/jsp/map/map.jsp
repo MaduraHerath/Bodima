@@ -21,7 +21,7 @@
   <div class="container">
 
     <!-- Map html - add the below to your page -->
-    <div class="jsmaps-wrapper" id="sriLanka-map" style="width:30px!important;height:10px!important"></div>
+    <div class="jsmaps-wrapper" id="sriLanka-map" style="padding: 100px;position: relative"></div>
     <!-- End Map html -->
   </div>
 

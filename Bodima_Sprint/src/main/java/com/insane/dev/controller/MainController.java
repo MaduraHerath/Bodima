@@ -57,7 +57,8 @@ public class MainController {
 
 
 
-    @RequestMapping(value = "/bodimList")
+    @RequestMapping(value = "/bodimList",method = RequestMethod.GET)
+    @ResponseBody
     private void getdistrict(@RequestParam(value = "search",required = false)String location) {
         try {
             details = restClient.getBodaimaDetails(location);

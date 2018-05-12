@@ -20,25 +20,23 @@ import java.util.stream.Collectors;
 public class BodimController {
 
     @Autowired
-    private HibernateSearchService searchservice;
-
-    @Autowired
     BodimaRepository bodimaRepository;
-
+    @Autowired
+    private HibernateSearchService searchservice;
     private List<Bodima> filteredBodims = new ArrayList<Bodima>();
 
     @GetMapping("/bodim")
-    public List<Bodima> search(@RequestParam(value = "search",required = false)String q, Model model){
+    public List<Bodima> search(@RequestParam(value = "search", required = false) String q, Model model) {
         List<Bodima> bodimaResults = null;
 
         try {
             bodimaResults = searchservice.fuzzySearch(q);
-            filteredBodims= bodimaResults;
+            filteredBodims = bodimaResults;
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        model.addAttribute("search",bodimaResults);
+        model.addAttribute("search", bodimaResults);
         return bodimaResults;
     }
 //    public List<Bodima> getAllNotes() {
@@ -48,18 +46,18 @@ public class BodimController {
     @GetMapping("/bodim/{id}")
     public ResponseEntity<Bodima> getNoteById(@PathVariable(value = "id") Long bodimId) {
         Bodima bodima = bodimaRepository.findOne(bodimId);
-        if(bodima == null) {
+        if (bodima == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok().body(bodima);
     }
 
     @PostMapping(value = "filteredBodima")
-    public List<Bodima> getFiltered(@RequestBody Bodima bodima){
-       List<Bodima> anygenderBodims =  filteredBodims.stream().filter(e -> e.getStatus() == true && (e.getPrice() <= bodima.getPrice() && e.getRoomCount() >= bodima.getRoomCount() || e.getGender() == bodima.getGender()))
+    public List<Bodima> getFiltered(@RequestBody Bodima bodima) {
+        List<Bodima> anygenderBodims = filteredBodims.stream().filter(e -> e.getStatus() == true && (e.getPrice() <= bodima.getPrice() && e.getRoomCount() >= bodima.getRoomCount() || e.getGender() == bodima.getGender()))
                 .collect(Collectors.toList());
 
-        return anygenderBodims.stream().filter(q->q.getGender().equals(bodima.getGender().toString())) .collect(Collectors.toList());
+        return anygenderBodims.stream().filter(q -> q.getGender().equals(bodima.getGender().toString())).collect(Collectors.toList());
 
     }
 
@@ -70,9 +68,9 @@ public class BodimController {
 
     @PutMapping("/bodim/{id}")
     public ResponseEntity<Bodima> updateNote(@PathVariable(value = "id") Long bodimId,
-                                           @Valid @RequestBody Bodima bodimaDetails) {
+                                             @Valid @RequestBody Bodima bodimaDetails) {
         Bodima bodima = bodimaRepository.findOne(bodimId);
-        if(bodima == null) {
+        if (bodima == null) {
             return ResponseEntity.notFound().build();
         }
         bodima.setAddress(bodimaDetails.getAddress());
@@ -86,7 +84,7 @@ public class BodimController {
     @DeleteMapping("/bodim/{id}")
     public ResponseEntity<Bodima> deleteNote(@PathVariable(value = "id") Long bodimId) {
         Bodima bodima = bodimaRepository.findOne(bodimId);
-        if(bodima == null) {
+        if (bodima == null) {
             return ResponseEntity.notFound().build();
         }
 

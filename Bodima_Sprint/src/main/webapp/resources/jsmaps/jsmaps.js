@@ -117,7 +117,7 @@
       'preloaderText': 'Loading map...',
       'disableTooltip': false,
       'selectElement': true,
-      'selectElementDevices': [''],
+      'selectElementDevices': ['Mobile'],
       'selectElementDefaultText': 'Please select',
       onReady: function() {},
       onStateClick: function() {},

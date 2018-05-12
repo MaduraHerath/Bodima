@@ -1,16 +1,10 @@
 package com.jaba.bodimawebapi.entity;
 
 
-
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Column;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Indexed
@@ -24,7 +18,7 @@ public class Bodima implements Serializable {
     private Long id;
     @Field
     private String owner;
-//    @Column(name = "location")
+    //    @Column(name = "location")
     @Field
     private String location;
     @Field
@@ -38,8 +32,7 @@ public class Bodima implements Serializable {
     @Field
     private boolean status;
     @Field
-    private long   roomCount;
-
+    private long roomCount;
 
 
     public boolean getStatus() {
